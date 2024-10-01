@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -113,8 +112,7 @@ namespace ProjetoCrud.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Cliente
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var cliente = await _context.Cliente.FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
                 return NotFound();
@@ -143,4 +141,3 @@ namespace ProjetoCrud.Controllers
         }
     }
 }
-
