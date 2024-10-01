@@ -1,8 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Página inicial";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="container mt-5 content-wrapper">
+    <div class="text-center">
+        <h1 class="display-4">Bem-vindo ao sistema de cadastro de clientes</h1>
+    </div>
+
+    <div class="mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="lead">Aqui você pode gerenciar o cadastro de clientes de forma eficiente. Utilize o menu  para navegar entre as opções disponíveis, como adicionar novos clientes, visualizar a lista de clientes ou editar informações.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4 text-center">
+                <h5 class="mb-3">Precisa cadastrar um novo cliente?</h5>
+                <a href="/Clientes/Create" class="btn btn-primary btn-lg">Cadastrar Cliente</a>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h5 class="mb-3">Ver lista completa de clientes</h5>
+                <a href="/Clientes/Index" class="btn btn-success btn-lg">Lista de Clientes</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <h5 class="text-muted">Fique à vontade para explorar todas as funcionalidades do sistema e otimizar seu trabalho.</h5>
+            </div>
+        </div>
+    </div>
 </div>
