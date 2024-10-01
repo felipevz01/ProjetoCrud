@@ -8,7 +8,7 @@ namespace ProjetoCrud.Models
         {
         }
 
-        public DbSet<Cliente> Cliente { get; set; } // Apenas a tabela Cliente
+        public DbSet<Cliente> Clientes { get; set; } // Alterado para plural
     }
 }
 

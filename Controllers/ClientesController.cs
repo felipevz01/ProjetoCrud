@@ -105,7 +105,37 @@ namespace ProjetoCrud.Controllers
             return View(cliente);
         }
 
-        // Other methods (Details, Delete) remain unchanged...
+        // GET: Clientes/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cliente = await _context.Cliente
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return View(cliente);
+        }
+
+        // POST: Clientes/DeleteConfirmed/5
+        [HttpPost, ActionName("DeleteConfirmed")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var cliente = await _context.Cliente.FindAsync(id);
+            if (cliente != null)
+            {
+                _context.Cliente.Remove(cliente);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
 
         private bool ClienteExists(int id)
         {
@@ -113,3 +143,4 @@ namespace ProjetoCrud.Controllers
         }
     }
 }
+
